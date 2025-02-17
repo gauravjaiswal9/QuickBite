@@ -1,4 +1,3 @@
-// src/pages/CustomerOrders.js
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import API from '../services/api';
@@ -18,7 +17,7 @@ const CustomerOrders = () => {
 
   useEffect(() => {
     fetchOrders();
-    const interval = setInterval(fetchOrders, 10000); // auto-refresh every 10 seconds
+    const interval = setInterval(fetchOrders, 10000);
     return () => clearInterval(interval);
   }, []);
 
@@ -29,32 +28,32 @@ const CustomerOrders = () => {
   };
 
   return (
-    <div>
-      <header style={{ padding: '1rem', borderBottom: '1px solid #ccc' }}>
-        <h2>My Orders</h2>
+    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+      <header className="p-4 bg-black bg-opacity-50 flex justify-between items-center">
+        <h2 className="text-2xl font-bold">My Orders</h2>
         <nav>
-          <Link to="/customer/dashboard" style={{ marginRight: '1rem' }}>Order Food</Link>
-          <Link to="/customer/orders" style={{ marginRight: '1rem' }}>My Orders</Link>
-          <button onClick={logout}>Logout</button>
+          <Link to="/customer/dashboard" className="mr-4 hover:text-yellow-400 transition">Order Food</Link>
+          <Link to="/customer/orders" className="mr-4 hover:text-yellow-400 transition">My Orders</Link>
+          <button onClick={logout} className="bg-red-500 hover:bg-red-700 px-4 py-2 rounded transition">Logout</button>
         </nav>
       </header>
-      <main style={{ padding: '1rem' }}>
+      <main className="p-6">
         {orders.length === 0 ? (
-          <p>No orders found.</p>
+          <p className="text-gray-200">No orders found.</p>
         ) : (
-          orders.map(order => (
-            <div key={order._id} style={{ border: '1px solid #ccc', margin: '1rem', padding: '1rem' }}>
-              <p><strong>Order ID:</strong> {order._id}</p>
-              <p><strong>Status:</strong> {order.status}</p>
-              <ul>
-                {order.items.map((item, index) => (
-                  <li key={index}>
-                    {item.food.name || 'Item'} - Quantity: {item.quantity}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {orders.map(order => (
+              <div key={order._id} className="bg-white text-black rounded-lg shadow-md p-4 hover:shadow-lg transition transform hover:scale-105">
+                <p className="text-lg font-bold">Order ID: {order._id}</p>
+                <p className="text-sm text-gray-700">Status: <span className="font-semibold text-green-500">{order.status}</span></p>
+                <ul className="mt-2 space-y-1">
+                  {order.items.map((item, index) => (
+                    <li key={index} className="text-sm">{item.food.name || 'Item'} - Quantity: {item.quantity}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         )}
       </main>
     </div>
