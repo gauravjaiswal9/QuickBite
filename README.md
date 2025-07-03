@@ -153,13 +153,6 @@ npm start
 
 ---
 
-## 📸 UI Screenshots
-
-| Login/Register | Customer Dashboard | Owner Orders |
-|----------------|--------------------|---------------|
-| (screenshot)   | (screenshot)       | (screenshot)  |
-
----
 
 ## 🧠 What I Learned
 
@@ -190,20 +183,6 @@ npm start
 
 ---
 
-## 🙋 About Me
-
-**Gaurav Kumar Jaiswal**  
-👨‍🎓 B.Tech ECE, IIIT Nagpur  
-📧 gauravjaiswal843@gmail.com  
-🔗 [LinkedIn](https://linkedin.com/in/gauravjaiswal843)
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
 
 ## 🏁 To Run Full App
 
@@ -219,14 +198,13 @@ npm start
 
 ---
 
-## 💡 Summary for Interviews / Resume
+## 🙋 About Me
 
-### Overview:
-> A food ordering platform where restaurant owners can manage menus and customers can place and track orders with real-time updates using Socket.io.
-
-### 3 Key Resume Points:
-- **Built a full-stack food ordering system** using MongoDB, Express, React, and Node with Socket.io for real-time order status sync.
-- **Implemented secure JWT-based role authentication** for owners and customers, with dynamic routing and access control.
-- **Designed interactive UI using Tailwind CSS** for fast, responsive interfaces and component-based architecture.
+**Gaurav Kumar Jaiswal**  
+👨‍🎓 B.Tech ECE, IIIT Nagpur  
+📧 gauravjaiswal843@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/gaurav-jaiswal-157936249/)
 
 ---
+
+
